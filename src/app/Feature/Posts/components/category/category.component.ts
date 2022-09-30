@@ -35,7 +35,7 @@ export class CategoryComponent implements OnInit {
   limit = 10;
   before = '';
   after = '';
-  totalCount = 10;
+  totalCount = this.limit;
 
   constructor(private postService: PostService) {}
 
