@@ -1,0 +1,35 @@
+.app-pagination {
+  max-width: 250px;
+  margin: 0 auto;
+  padding: 46px 0 39px 0;
+  .icon {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    border: 0;
+    padding: 17px 27px;
+  }
+  &__container {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 23px;
+    justify-content: center;
+    color: #FFFFFF;
+    &__prev-icon {
+      @extend .icon;
+      background-image:  url(../../assets/prev.png);
+    }
+    &__next-icon {
+      @extend .icon;
+      background-image:  url(../../assets/next.png);
+    }
+    &__pagination-number {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      padding-top: 8px;
+    }
+  }
+
+}

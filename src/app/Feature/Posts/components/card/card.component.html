@@ -1,0 +1,19 @@
+<div class="app-card">
+  <img [src]="data.thumbnail" alt="{{data.title}}" class="app-card__img" *ngIf="!show && data.thumbnail && data.thumbnail !== 'self'" />
+  <div class="app-card__content">
+    <div class="app-card__content__post-header">
+      <div class="app-card__content__post-header__comments">
+        {{data.numComments}}
+      </div>
+      <div class="app-card__content__post-header__comments__up">
+        {{data.score}}
+      </div>
+    </div>
+    <div class="app-card__content__title">{{data.title}}</div>
+    <div class="app-card__content__description" *ngIf="show">{{data.selfText}}</div>
+    <div class="app-card__content__post-footer">
+      <div class="app-card__content__post-footer__meta-author">Posted by {{data.author}}</div>
+      <a [ngClass]=" show ? 'show-less' : 'show-more'"  (click)="showMore()" *ngIf="data.selfText">{{ label }}</a>
+    </div>
+  </div>
+</div>

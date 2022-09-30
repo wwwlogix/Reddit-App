@@ -1,0 +1,15 @@
+<div class="app-post">
+  <app-header (categorySelected)="onCategorySelected($event)" (limitSelected)="onLimitSelected($event)"></app-header>
+  <div class="app-post__post-list-container">
+    <div *ngFor="let post of postsList">
+      <app-card [data]="post"></app-card>
+    </div>
+    <app-spinner *ngIf="showSpinner && !errorNotification"></app-spinner>
+    <app-error-notification *ngIf="errorNotification" [errorNotification]="errorMessage"></app-error-notification>
+    <app-pagination (prevLinkClicked)="onPrevLinkClicked($event)" (nextLinkClicked)="onNextLinkClicked($event)"
+                    [prevValue]="before" [nextValue]="after" [totalCount]="totalCount"
+                    [limit]="limit" *ngIf="!showSpinner && postsList.length > 0 "></app-pagination>
+  </div>
+</div>
+
+
