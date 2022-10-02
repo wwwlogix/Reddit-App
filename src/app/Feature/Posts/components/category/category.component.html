@@ -1,6 +1,6 @@
-<div class="app-post">
+<div class="app-category">
   <app-header (categorySelected)="onCategorySelected($event)" (limitSelected)="onLimitSelected($event)"></app-header>
-  <div class="app-post__post-list-container">
+  <div class="app-category__post-list-container">
     <div *ngFor="let post of postsList">
       <app-card [data]="post"></app-card>
     </div>

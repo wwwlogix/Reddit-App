@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { Post } from '../../models/post';
 import { PostParams } from '../../models/post-params';
@@ -9,7 +9,7 @@ import { PostService } from '../../services/post.service';
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss']
 })
-export class CategoryComponent implements OnInit {
+export class CategoryComponent implements OnInit, OnDestroy {
   private readonly destroy$ = new Subject<boolean>();
   private post: Post = {
     name: '',
@@ -115,5 +115,10 @@ export class CategoryComponent implements OnInit {
     this.postParams.before = '';
     this.postParams.after = '';
     this.totalCount = this.limit;
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
   }
 }

@@ -5,10 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ALL_COMPONENTS } from './components';
-import { ErrorNotificationComponent } from './components/error-notification/error-notification.component';
-
 @NgModule({
-  declarations: [ALL_COMPONENTS, ErrorNotificationComponent],
+  declarations: [ALL_COMPONENTS],
   exports: [ALL_COMPONENTS],
   imports: [
     CommonModule,

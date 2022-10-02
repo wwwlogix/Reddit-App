@@ -1,14 +1,9 @@
 <div class="app-header">
-    <select [(ngModel)]="selectedCategory" (change)="onCategorySelected()">
-        <option value="golf">golf</option>
-        <option value="football">football</option>
-        <option value="hockey">hockey</option>
-    </select>
-    <select [(ngModel)]="selectedLimit" (change)="onLimitSelected()">
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
-    </select>
-    REDDIT.COM/R/{{selectedCategory}}
+  <select [(ngModel)]="selectedCategory" (change)="onCategorySelected()">
+    <option *ngFor="let category of categories" id="{{category.id}}" value="{{category.value}}">{{category.value}}</option>
+  </select>
+  <select [(ngModel)]="selectedLimit" (change)="onLimitSelected()">
+    <option *ngFor="let limit of limits" id="{{limit.id}}" value="{{limit.value}}">{{limit.value}}</option>
+  </select>
+  <span>{{baseUrl}}</span><span>{{selectedCategory}}</span>
 </div>
